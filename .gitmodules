@@ -1,0 +1,3 @@
+[submodule "dwm/src/Personal/dwm"]
+	path = dwm/src/Personal/dwm
+	url = https://github.com/oneilljp/dwm.git
