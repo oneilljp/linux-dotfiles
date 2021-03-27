@@ -22,4 +22,4 @@ source $HOME/.config/nvim/modules/plugins.vim
 source $HOME/.config/nvim/modules/colors.vim
 source $HOME/.config/nvim/modules/keys.vim
 source $HOME/.config/nvim/modules/plugconf.vim
-
+source $HOME/.config/nvim/modules/startpage.vim

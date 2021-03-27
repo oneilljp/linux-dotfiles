@@ -14,8 +14,11 @@ Plug 'mhinz/vim-startify'
 
 Plug 'sheerun/vim-polyglot' 			" Coloring
 
+" Color Themes
+Plug 'drewtempelmeyer/palenight.vim'
 Plug 'sainnhe/forest-night'
 Plug 'arcticicestudio/nord-vim'
+Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
 call plug#end()
 
