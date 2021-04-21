@@ -1,7 +1,9 @@
 #!/bin/bash
 xrandr --output HDMI-0 --auto --left-of eDP-1-1 &
 picom &
-nitrogen --restore &
+feh --bg-scale --no-fehbg $HOME/Pictures/wallpapers/0058.jpg &
 xrdb ~/.config/X11/Xresources &
-#dwmblocks &
 /home/$USER/src/Personal/dwm-bar/dwm_bar.sh &
+discord &
+brave &
+kitty &

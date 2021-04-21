@@ -25,6 +25,7 @@ _comps=(
 'add-zle-hook-widget' '_add-zle-hook-widget'
 'add-zsh-hook' '_add-zsh-hook'
 'admin' '_sccs'
+'alacritty' '_alacritty'
 'ali' '_mh'
 'alias' '_alias'
 'amaya' '_webbrowser'
@@ -122,6 +123,8 @@ _comps=(
 'bunzip2' '_bzip2'
 'burst' '_mh'
 'busctl' '_busctl'
+'_bw' '_bw'
+'bw' '_bw'
 'bzcat' '_bzip2'
 'bzegrep' '_grep'
 'bzfgrep' '_grep'
@@ -175,7 +178,6 @@ _comps=(
 'cmp' '_cmp'
 'co' '_rcs'
 'code' '_code'
-'code-oss' '_code-oss'
 'column' '_column'
 'comb' '_sccs'
 'combine' '_imagemagick'
@@ -831,6 +833,7 @@ _comps=(
 'nginx' '_nginx'
 'ngrep' '_ngrep'
 'nice' '_nice'
+'ninja' '_ninja'
 'nkf' '_nkf'
 'nl' '_nl'
 'nm' '_nm'
@@ -1039,7 +1042,6 @@ _comps=(
 'resolvectl' '_resolvectl'
 'restart' '_initctl'
 'retawq' '_webbrowser'
-'rg' '_rg'
 'rgview' '_vim'
 'rgvim' '_vim'
 'ri' '_ri'
@@ -1634,13 +1636,13 @@ bindkey '^[,' _history-complete-newer
 bindkey '^[/' _history-complete-older
 bindkey '^[~' _bash_complete-word
 
-autoload -Uz _extract _bat _bluetoothctl _bootctl _bspc \
-            _busctl _code _code-oss _coredumpctl _curl \
+autoload -Uz _extract _alacritty _bat _bluetoothctl _bootctl \
+            _bspc _busctl _bw _coredumpctl _curl \
             _downgrade _flatpak _hostnamectl _journalctl _kernel-install \
             _kitty _lf _libinput _localectl _loginctl \
             _machinectl _mkinitcpio _mpv _netctl _networkctl \
-            _nvme _pacman _paru _pkgfile _playerctl \
-            _polybar _polybar_msg _pulseaudio _resolvectl _rg \
+            _ninja _nvme _pacman _paru _pkgfile \
+            _playerctl _polybar _polybar_msg _pulseaudio _resolvectl \
             _sd_hosts_or_user_at_host _sd_machines _sd_outputmodes _sd_unit_files _systemctl \
             _systemd _systemd-analyze _systemd-delta _systemd-inhibit _systemd-nspawn \
             _systemd-path _systemd-run _systemd-tmpfiles _timedatectl _udevadm \
@@ -1798,5 +1800,5 @@ autoload -Uz +X _call_program
 typeset -gUa _comp_assocs
 _comp_assocs=( '' )
 
-#omz revision: 95a06f3927a286db257dc99791b02caba757fe33
-#omz fpath: /home/oneilljp/.config/.oh-my-zsh/custom/plugins/zsh-autosuggestions /home/oneilljp/.config/.oh-my-zsh/plugins/timer /home/oneilljp/.config/.oh-my-zsh/plugins/sudo /home/oneilljp/.config/.oh-my-zsh/plugins/extract /home/oneilljp/.config/.oh-my-zsh/functions /home/oneilljp/.config/.oh-my-zsh/completions /usr/local/share/zsh/site-functions /usr/share/zsh/site-functions /usr/share/zsh/functions/Calendar /usr/share/zsh/functions/Chpwd /usr/share/zsh/functions/Completion /usr/share/zsh/functions/Completion/Base /usr/share/zsh/functions/Completion/Linux /usr/share/zsh/functions/Completion/Unix /usr/share/zsh/functions/Completion/X /usr/share/zsh/functions/Completion/Zsh /usr/share/zsh/functions/Exceptions /usr/share/zsh/functions/Math /usr/share/zsh/functions/MIME /usr/share/zsh/functions/Misc /usr/share/zsh/functions/Newuser /usr/share/zsh/functions/Prompts /usr/share/zsh/functions/TCP /usr/share/zsh/functions/VCS_Info /usr/share/zsh/functions/VCS_Info/Backends /usr/share/zsh/functions/Zftp /usr/share/zsh/functions/Zle
+#omz revision: 12669f29f0843b8b980dd137f150a74511f88842
+#omz fpath: /home/oneilljp/.config/.oh-my-zsh/custom/plugins/zsh-autosuggestions /home/oneilljp/.config/.oh-my-zsh/plugins/sudo /home/oneilljp/.config/.oh-my-zsh/plugins/extract /home/oneilljp/.config/.oh-my-zsh/functions /home/oneilljp/.config/.oh-my-zsh/completions /usr/local/share/zsh/site-functions /usr/share/zsh/site-functions /usr/share/zsh/functions/Calendar /usr/share/zsh/functions/Chpwd /usr/share/zsh/functions/Completion /usr/share/zsh/functions/Completion/Base /usr/share/zsh/functions/Completion/Linux /usr/share/zsh/functions/Completion/Unix /usr/share/zsh/functions/Completion/X /usr/share/zsh/functions/Completion/Zsh /usr/share/zsh/functions/Exceptions /usr/share/zsh/functions/Math /usr/share/zsh/functions/MIME /usr/share/zsh/functions/Misc /usr/share/zsh/functions/Newuser /usr/share/zsh/functions/Prompts /usr/share/zsh/functions/TCP /usr/share/zsh/functions/VCS_Info /usr/share/zsh/functions/VCS_Info/Backends /usr/share/zsh/functions/Zftp /usr/share/zsh/functions/Zle

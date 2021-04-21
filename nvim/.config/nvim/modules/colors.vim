@@ -3,14 +3,14 @@ if has('termguicolors')
 endif
 " Colors
 " Forest-night
-"colorscheme forest-night
-"let g:lightline = {}
-"let g:lightline.colorsheme = 'forest-night'
+colorscheme everforest
+let g:lightline = {}
+let g:lightline.colorsheme = 'everforest'
 
 " NORD
-colorscheme nord
-let g:lightline = {}
-let g:lightline.colorscheme = 'nord'
+"colorscheme nord
+"let g:lightline = {}
+"let g:lightline.colorscheme = 'nord'
 
 " Palenight
 "set background=dark
@@ -21,3 +21,8 @@ let g:lightline.colorscheme = 'nord'
 " Gruvbox
 "set background=dark
 "colorscheme gruvbox
+
+" Pywal -> Comment out termgui above
+"colorscheme wal
+"let g:lightline = {}
+"let g:lightline.colorscheme = 'wal'
