@@ -6,4 +6,4 @@ xrdb ~/.config/X11/Xresources &
 /home/$USER/src/Personal/dwm-bar/dwm_bar.sh &
 discord &
 brave &
-kitty &
+alacritty &
