@@ -120,6 +120,7 @@ alias np="nvim ~/.config/polybar/config"
 
 alias nf="neofetch"
 alias sudo="doas"
+alias scrotclip="scrot -s ~/foo.png && xclip -selection clipboard -t image/png -i ~/foo.png && rm ~/foo.png"
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
