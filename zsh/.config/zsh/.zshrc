@@ -109,18 +109,19 @@ source $ZSH/oh-my-zsh.sh
 # Aliases
 
 alias xq="xbps-query -Rs"
-alias xi="sudo xbps-install -S"
-alias xr="sudo xbps-remove -R"
-alias update="sudo xbps-install -Su"
+alias xi="doas xbps-install -S"
+alias xr="doas xbps-remove -R"
+alias update="doas xbps-install -Su"
 
 alias v="nvim"
+alias clera="clear"
 alias nb="nvim ~/.config/bspwm/bspwmrc"
 alias ns="nvim ~/.config/sxhkd/sxhkdrc"
 alias np="nvim ~/.config/polybar/config"
 
 alias nf="neofetch"
 alias sudo="doas"
-alias scrotclip="scrot -s ~/foo.png && xclip -selection clipboard -t image/png -i ~/foo.png && rm ~/foo.png"
+alias scrotclip="scrot -s ~/foo.png; xclip -selection clipboard -t image/png -i ~/foo.png; rm ~/foo.png"
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh

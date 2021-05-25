@@ -7,6 +7,6 @@ feh --bg-fill --no-fehbg $HOME/Pictures/my_walls/poppy.png &
 xrdb ~/.config/X11/Xresources &
 /home/$USER/src/Personal/dwm-bar/dwm_bar.sh &
 discord &
-#brave &
-firefox-developer-edition &
+brave &
+#firefox-developer-edition &
 kitty &
