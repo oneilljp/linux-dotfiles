@@ -23,7 +23,7 @@ Plug 'sainnhe/everforest'
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'sainnhe/gruvbox-material'
-Plug 'brainfucksec/wal.vim'
+Plug 'tek256/simple-dark'
 Plug 'itchyny/lightline.vim'
 call plug#end()
 

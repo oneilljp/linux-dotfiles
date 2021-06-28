@@ -16,9 +16,9 @@ endif
 "let g:lightline = {'colorscheme' : 'everforest'}
 
 " NORD
-"colorscheme nord
-"let g:lightline = {}
-"let g:lightline.colorscheme = 'nord'
+colorscheme nord
+let g:lightline = {}
+let g:lightline.colorscheme = 'nord'
 
 " Palenight
 "set background=dark
@@ -26,10 +26,10 @@ endif
 "let g:lightline = {'colorscheme' : 'palenight'}
 
 " Gruvbox
-set background=dark
-let g:gruvbox_material_background = 'soft'
-colorscheme gruvbox-material
-let g:lightline = {'colorscheme' : 'gruvbox_material'}
+"set background=dark
+"let g:gruvbox_material_background = 'soft'
+"colorscheme gruvbox-material
+"let g:lightline = {'colorscheme' : 'gruvbox_material'}
 
 " Pywal -> Comment out termgui above
 "colorscheme wal
