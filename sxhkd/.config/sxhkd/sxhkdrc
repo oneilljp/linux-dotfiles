@@ -89,6 +89,9 @@ super + {o,i}
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
+## Quicker keybinds for second desktop
+alt + {_,shift + }{1-4,5}
+	bspc {desktop -f,node -d} '^{6-9,10}'
 #
 # preselect
 #
@@ -134,8 +137,8 @@ super + u
 	scratchtog.sh scratch
 
 # Browser
-super + w
-	firefox-developer-edition	
+super + {_, shift} + w
+	firefox-developer-edition {--browser, --private-window}
 
 # Ranger
 super + e

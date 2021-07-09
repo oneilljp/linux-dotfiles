@@ -1,7 +1,7 @@
 #! /bin/sh
 
 sxhkd &
-xrandr --output HDMI-0 --auto --left-of eDP-1-1 &
+xrandr --ouput eDP-1-1 --auto --primary --output HDMI-0 --auto --left-of eDP-1-1 &
 ~/.config/polybar/startup.sh &
 feh --no-fehbg --bg-fill ~/Pictures/my_walls/mountain.jpg &
 picom --config ~/.config/picom/picom.conf &
@@ -10,9 +10,36 @@ dunst &
 
 # Check this link post actual install for monitor stuff:
 # https://www.reddit.com/r/bspwm/comments/grfel8/multiple_monitor_setups/
+
 #bspc monitor -d I II III IV V VI VII VIII IX X
-bspc monitor eDP-1-1 -d 1 2 3 4 5
-bspc monitor HDMI-0 -d 6 7 8 9 0
+
+monitors=($(bspc query -M --names))
+
+#if [ ${#monitors[@]} = 2 ]; then
+	#bspc monitor ${monitors[0]} -d 1 2 3 4 5
+	#bspc monitor ${monitors[1]} -d 6 7 8 9 0
+#elif [ ${#monitors[@]} = 1 ]; then
+	#bspc monitor ${monitors[0]} -d 1 2 3 4 5 6 7 8 9 0
+#else
+	#bspc monitor ${monitors[0]} -d 1 2 3 4 5 6 7 8 9 0
+	#notify-send "More monitors found then supported, defaulting to one" &
+#fi
+
+# Dynamic workspace management based on connected monitors
+case ${#monitors[@]} in
+	1)
+		bspc monitor ${monitors[0]} -d 1 2 3 4 5 6 7 8 9 0
+		;;
+	2)
+		bspc monitor ${monitors[0]} -d 1 2 3 4 5
+		bspc monitor ${monitors[1]} -d 6 7 8 9 0
+		;;
+	*)
+		bspc monitor ${monitors[0]} -d 1 2 3 4 5 6 7 8 9 0
+		notify-send "More monitors found then supported, defaulting to one" &
+		;;
+esac
+
 
 bspc config border_width         2
 bspc config window_gap          10
@@ -28,6 +55,7 @@ bspc config focus_follows_pointer true
 bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Brave-browser desktop='^3' follow=on
 bspc rule -a firefoxdeveloperedition desktop='^2' follow=on
+bspc rule -a *:*:Picture-in-Picture state=floating
 bspc rule -a Icecat desktop='^3' follow=on
 bspc rule -a Zathura desktop='^1' state=tiled follow=on
 bspc rule -a mplayer2 state=floating
