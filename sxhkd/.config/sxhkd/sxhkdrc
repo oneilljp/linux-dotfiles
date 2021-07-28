@@ -9,7 +9,6 @@ super + Return
 # program launcher
 super + d
 	rofi -modi drun -show drun
-	#dmenu_run
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -143,6 +142,10 @@ super + {_, shift} + w
 # Ranger
 super + e
 	ranger
+
+# Bitwarden rofi
+super + shift + p
+	rofi-rbw
 
 # Media Control
 super + alt + Up

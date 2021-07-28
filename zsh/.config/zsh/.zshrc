@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/src/bin:/usr/local/bin:$HOME/.cargo/bin:$HOME/.local/bin:$PATH
+export PATH=$HOME/src/CTAT:$HOME/src/bin:/usr/local/bin:$HOME/.cargo/bin:$HOME/.local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/oneilljp/.config/.oh-my-zsh"
@@ -120,8 +120,16 @@ alias ns="nvim ~/.config/sxhkd/sxhkdrc"
 alias np="nvim ~/.config/polybar/config"
 
 alias nf="neofetch"
-alias sudo="doas"
 alias scrotclip="scrot -s ~/foo.png; xclip -selection clipboard -t image/png -i ~/foo.png; rm ~/foo.png"
+
+# Replacements for things I like
+alias sudo="doas"
+alias ls="exa --icons"
+alias cat="bat"
+alias htop="btm"
+alias grep="rg"
+
+GITSTATUS_LOG_LEVEL=DEBUG
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh

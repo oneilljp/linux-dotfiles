@@ -1,8 +1,9 @@
 #!/bin/sh
 
-# Editor
+# Defaults
 export EDITOR="nvim"
 export MANPAGER="bat"
+export BROWSER="brave"
 
 # XDG Vars
 export XDG_CONFIG_HOME="$HOME/.config"

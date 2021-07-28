@@ -1,5 +1,7 @@
 *.shada
 */swap
 **/plugged/
+**/packer/
 
 nvim/.config/nvim/plugged/
+
