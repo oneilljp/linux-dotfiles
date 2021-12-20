@@ -8,6 +8,8 @@ opt.shiftwidth = 2
 opt.tabstop = 2
 opt.termguicolors = true
 vim.g.rust_fold = 2
+vim.g.rustfmt_command = 'rustfmt'
+vim.g.rustfmt_options = ''
 
 require('nvim-autopairs').setup()
 require('nvim-autopairs.completion.compe').setup({

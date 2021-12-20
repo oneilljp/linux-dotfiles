@@ -4,7 +4,7 @@
 
 local g = vim.g
 
-g.nvim_tree_width = 27
+--[[ g.nvim_tree_width = 27
 g.nvim_tree_ignore = {'.git'}
 g.nvim_tree_gitignore = 1
 g.nvim_tree_auto_open = 1
@@ -19,4 +19,51 @@ g.nvim_tree_show_icons = {
 	git = 1,
 	folders = 1,
 	files = 1
-}
+} ]]
+
+require'nvim-tree'.setup {
+      disable_netrw       = true,
+      hijack_netrw        = true,
+      open_on_setup       = false,
+      ignore_ft_on_setup  = {},
+      update_to_buf_dir   = {
+        enable = true,
+        auto_open = true,
+      },
+      auto_close          = false,
+      open_on_tab         = false,
+      hijack_cursor       = false,
+      update_cwd          = false,
+      diagnostics         = {
+        enable = false,
+        icons = {
+          hint = "",
+          info = "",
+          warning = "",
+          error = "",
+        }
+      },
+      update_focused_file = {
+        enable      = false,
+        update_cwd  = false,
+        ignore_list = {}
+      },
+      system_open = {
+        cmd  = nil,
+        args = {}
+      },
+      view = {
+        width = 30,
+        height = 30,
+        side = 'left',
+        auto_resize = false,
+        mappings = {
+          custom_only = false,
+          list = {}
+        }
+      },
+      filters = {
+	dotfiles = false,
+	custom = {}
+      }
+    }
