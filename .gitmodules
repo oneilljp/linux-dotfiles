@@ -1,6 +1,0 @@
-[submodule "dwm/src/Personal/dwm"]
-	path = dwm/src/Personal/dwm
-	url = https://github.com/oneilljp/dwm.git
-[submodule "suckless/src/suckless/dwm-6.2"]
-	path = suckless/src/suckless/dwm-6.2
-	url = git@github.com:oneilljp/dwm-6.2.git
