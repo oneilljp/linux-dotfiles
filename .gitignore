@@ -1,7 +1,5 @@
 *.shada
 */swap
-**/plugged/
 **/packer/
 
-nvim/.config/nvim/plugged/
-
+nerd-fonts/

@@ -1,0 +1,260 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    /* font-family: Roboto, Helvetica, Arial, sans-serif; */
+    font-family: Iosevka Nerd Font;
+}
+
+window#waybar {
+    /* background-color: rgba(30, 30, 46, 1); */
+    background-color: transparent;
+    margin-top: 10px;
+    color: rgba(217, 224, 238, 1);
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+.modules-left {
+    background-color: rgba(48, 45, 65, 1);
+    border-radius: 10px;
+}
+
+/*
+window#waybar.empty {
+    background-color: transparent;
+}
+window#waybar.solo {
+    background-color: #FFFFFF;
+}
+*/
+
+#tags button {
+    padding: 0 12px 0 10px;
+    background-color: transparent;
+    color: rgba(217, 224, 238, 1);
+    /* Use box-shadow instead of border so the text isn't offset */
+    /* Avoid rounded borders under each workspace name */
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#tags button:hover {
+    background-color: transparent;
+}
+
+#tags button.focused {
+    color: rgba(245, 194, 231, 1);
+    box-shadow: inset 0 -3px rgba(245, 194, 231, 1);
+}
+
+#tags button.occupied {
+    color: rgba(181, 232, 224, 1);
+}
+
+#tags button.focused.occupied {
+    color: rgba(245, 194, 231, 1);
+    box-shadow: inset 0 -3px rgba(245, 194, 231, 1);
+}
+
+#tags button.urgent {
+    color: rgba(242, 143, 173, 1);
+}
+
+#mode {
+    background-color: #64727D;
+    border-bottom: 3px solid #ffffff;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#mpd {
+    background-color: rgba(48, 45, 65, 1);
+    border-radius: 5px;
+    padding: 0 10px;
+    color: rgba(217, 224, 238, 1);
+}
+
+#window,
+#tags {
+    margin: 0 4px;
+}
+
+/* If tags is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #tags {
+    margin-left: 0;
+}
+
+/* If tags is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #tags {
+    margin-right: 0;
+}
+
+#clock {
+    box-shadow: inset 0 -3px rgba(232, 162, 175, 1);
+}
+
+#battery {
+    box-shadow: inset 0 -3px rgba(248, 189, 150, 1);
+}
+
+#battery.charging, #battery.plugged {
+    box-shadow: inset 0 -3px rgba(171, 233, 179, 1);
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: rgba(242, 143, 173, 1);
+    color: rgba(110, 108, 126, 1);
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#cpu {
+    background-color: #2ecc71;
+    color: #000000;
+}
+
+#memory {
+    background-color: #9b59b6;
+}
+
+#disk {
+    background-color: #964B00;
+}
+
+#backlight {
+    background-color: #90b1b1;
+}
+
+#network {
+    /* background-color: rgba(137, 220, 235, 1);
+    color: rgba(110, 108, 126, 1);*/
+    box-shadow:inset 0 -3px rgba(137, 220, 235, 1);
+}
+
+#network.disconnected {
+    background-color: #f53c3c;
+}
+
+#pulseaudio {
+    /*background-color: rgba(250, 227, 176, 1);
+    color: rgba(110, 108, 126, 1);*/
+    box-shadow: inset 0 -3px rgba(250, 227, 176, 1);
+}
+
+#pulseaudio.muted {
+    background-color: #90b1b1;
+    color: #2a5c45;
+}
+
+#custom-media {
+    background-color: #66cc99;
+    color: #2a5c45;
+    min-width: 100px;
+}
+
+#custom-media.custom-spotify {
+    background-color: #66cc99;
+}
+
+#custom-media.custom-vlc {
+    background-color: #ffa000;
+}
+
+#temperature {
+    background-color: #f0932b;
+}
+
+#temperature.critical {
+    background-color: #eb4d4b;
+}
+
+#tray {
+    background-color: transparent;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+#idle_inhibitor {
+    background-color: #2d3436;
+}
+
+#idle_inhibitor.activated {
+    background-color: #ecf0f1;
+    color: #2d3436;
+}
+
+#mpd {
+    /*background-color: #66cc99;
+    color: #2a5c45;*/
+    box-shadow: inset 0 -3px rgba(171, 233, 179, 1);
+}
+
+#mpd.disconnected {
+    box-shadow: inset 0 -3px rgba(242, 143, 173, 1);
+}
+
+#mpd.stopped {
+    background-color: #90b1b1;
+}
+
+#mpd.paused {
+    box-shadow: inset 0 -3px rgba(181, 232, 224, 1);
+}
+
+#language {
+    background: #00b093;
+    color: #740864;
+    padding: 0 5px;
+    margin: 0 5px;
+    min-width: 16px;
+}
+
+#keyboard-state {
+    background: #97e1ad;
+    color: #000000;
+    padding: 0 0px;
+    margin: 0 5px;
+    min-width: 16px;
+}
+
+#keyboard-state > label {
+    padding: 0 5px;
+}
+
+#keyboard-state > label.locked {
+    background: rgba(0, 0, 0, 0.2);
+}
