@@ -29,6 +29,44 @@ function install_fonts {
   rm -rf nerd-fonts
 }
 
+function manual_mode {
+  # Manual Mode
+  read -p "What applications do you want bootstrapped?: " -a apps
+
+  fonts=False
+  font_rec=False
+
+  for app in ${apps[*]}; do
+    case $app in
+      fish)     stow -t "$HOME/.config/" fish                       ;;
+      btop)     stow -t "$HOME/.config/" btop                       ;;
+      mako)     stow -t "$HOME/.config/" mako                       ;;
+      mpd)      stow -t "$HOME/.config/" mpd                        ;;
+      ncmpcpp)  stow -t "$HOME/.config/" ncmpcpp                    ;;
+      zathura)  stow -t "$HOME/.config/" zathura                    ;;
+      waybar)   font_rec=True; stow -t "$HOME/.config/" waybar      ;;
+      kitty)    font_rec=True; stow -t "$HOME/.config/" kitty       ;;
+      wezterm)  font_rec=True; stow -t "$HOME/.config/" wezterm     ;;
+      river)    stow -t "$HOME/.config/" river                      ;;
+      nvim)     stow -t "$HOME/.config/" nvim                       ;;
+      fonts)    fonts=True                                          ;;
+      *)
+        echo "$app not supported, skipping..."
+        continue
+      ;;
+    esac
+    ((count=count+1))
+  done
+
+  if [[ $font_rec = True && $fonts = False ]]; then
+    echo -e "\nYou've bootstrapped an app whose config uses non default fonts. Be sure to boostrap \`fonts\` before you go!\n"
+  fi
+
+  if [ $fonts = True ] ; then
+    install_fonts 
+  fi
+}
+
 echo "
 ===========================================================================
 ---------------------------------------------------------------------------
@@ -59,42 +97,27 @@ River) river waybar
 
 apps=()
 
-
-# Manual Mode
-read -p "What applications do you want bootstrapped?: " -a apps
+read -p "Do you want to boostrap everything? (y/n): " manual
 
 count=0
-fonts=False
-font_rec=False
+if [ "$manual" == "y" ]; then
+  stow -t "$HOME/.config/" fish
+  stow -t "$HOME/.config/" btop
+  stow -t "$HOME/.config/" mako
+  stow -t "$HOME/.config/" mpd
+  stow -t "$HOME/.config/" ncmpcpp
+  stow -t "$HOME/.config/" zathura
+  stow -t "$HOME/.config/" waybar
+  stow -t "$HOME/.config/" kitty
+  stow -t "$HOME/.config/" wezterm
+  stow -t "$HOME/.config/" river
+  stow -t "$HOME/.config/" nvim
 
-for app in ${apps[*]}; do
-  case $app in
-    fish)     stow -t "$HOME/.config/" fish                       ;;
-    btop)     stow -t "$HOME/.config/" btop                       ;;
-    mako)     stow -t "$HOME/.config/" mako                       ;;
-    mpd)      stow -t "$HOME/.config/" mpd                        ;;
-    ncmpcpp)  stow -t "$HOME/.config/" ncmpcpp                    ;;
-    zathura)  stow -t "$HOME/.config/" zathura                    ;;
-    waybar)   font_rec=True; stow -t "$HOME/.config/" waybar      ;;
-    kitty)    font_rec=True; stow -t "$HOME/.config/" kitty       ;;
-    wezterm)  font_rec=True; stow -t "$HOME/.config/" wezterm     ;;
-    river)    stow -t "$HOME/.config/" river                      ;;
-    nvim)     stow -t "$HOME/.config/" nvim                       ;;
-    fonts)    fonts=True                                          ;;
-    *)
-      echo "$app not supported, skipping..."
-      continue
-    ;;
-  esac
-  ((count=count+1))
-done
+  install_fonts
 
-if [[ $font_rec = True && $fonts = False ]]; then
-  echo -e "\nYou've bootstrapped an app whose config uses non default fonts. Be sure to boostrap \`fonts\` before you go!\n"
+else
+    manual_mode
 fi
 
-if [ $fonts = True ] ; then
-  install_fonts 
-fi
 
 echo "$count applications setup 😄"

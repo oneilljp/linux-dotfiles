@@ -41,7 +41,10 @@ return require('packer').startup(function()
   -- Syntax Highlighting
   use {
     'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
+    run = ':TSUpdate',
+    config = function()
+      require('settings.plugs.treesitter')
+    end
   }
 
   use 'kyazdani42/nvim-web-devicons'
